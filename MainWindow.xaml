@@ -1,0 +1,154 @@
+﻿<Window x:Class="L_R_3_KhasanovaNG_BPI_23_01.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:L_R_3_KhasanovaNG_BPI_23_01"
+        mc:Ignorable="d"
+        Title="Maтематическое выражение" 
+        Height="500" Width="500"
+        WindowStartupLocation="CenterScreen"
+        SizeToContent="Height">
+
+    <StackPanel>
+
+        <RadioButton GroupName="Formulas" Margin="5" Name="Radio1">
+            <StackPanel>
+                <Image Source="Images/p1.png" Height="25"/>
+                <WrapPanel>
+                    <GroupBox Header="Parametrs1"
+                              IsEnabled="{Binding IsChecked,RelativeSource={RelativeSource AncestorType=RadioButton} }">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="a" Grid.Column="0" Grid.Row="0"/>
+                            <TextBox Text="0,00" Grid.Column="1" Grid.Row="0"
+       MinWidth="70" Name="R1TextA"/>
+                            <Label Content="f" Grid.Column="0" Grid.Row="1"/>
+                            <ComboBox Grid.Column="1" Grid.Row="1" SelectedIndex="0"
+        Name="R1ComboF">
+                                <ComboBoxItem>4</ComboBoxItem>
+                                <ComboBoxItem>5</ComboBoxItem>
+                                <ComboBoxItem>6</ComboBoxItem>
+                                <ComboBoxItem>7</ComboBoxItem>
+                                <ComboBoxItem>8</ComboBoxItem>
+                                <ComboBoxItem>9</ComboBoxItem>
+                            </ComboBox>
+                        </Grid>
+                    </GroupBox>
+                </WrapPanel>
+
+            </StackPanel>
+        </RadioButton>
+
+        <RadioButton GroupName="Formulas" Margin="5" Name="Radio2">
+            <StackPanel>
+                <Image Source="Images/p2.png" Height="20"/>
+                <StackPanel>
+                    <GroupBox  Header="Parametrs2"
+                        IsEnabled="{Binding IsChecked,RelativeSource={RelativeSource AncestorType=RadioButton} }">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="a" Grid.Column="0" Grid.Row="0"/>
+                            <TextBox Text="0,00" Grid.Column="1" Grid.Row="0" MinWidth="70" Name="R2TextA"/>
+                            <Label Content="b" Grid.Column="2" Grid.Row="0"/>
+                            <TextBox Text="0,00" Grid.Column="3" Grid.Row="0" MinWidth="70" Name="R2TextB"/>
+                            <Label Content="f" Grid.Column="0" Grid.Row="1"/>
+                            <ComboBox Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" SelectedIndex="0" Name="R2ComboF"/>
+                        </Grid>
+                    </GroupBox>
+                </StackPanel>
+
+            </StackPanel>
+        </RadioButton>
+
+        <RadioButton GroupName="Formulas" Margin="5" x:Name="Radio3">
+            <StackPanel>
+                <Image Source="Images/p3.png" Height="30"/>
+                <StackPanel>
+                    <GroupBox  Header="Parametrs3"
+                        IsEnabled="{Binding IsChecked,RelativeSource={RelativeSource AncestorType=RadioButton} }">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="a"/>
+                            <TextBox Text="0,00" MinWidth="50" Name="R3TextA"/>
+                            <Label Content="b"/>
+                            <TextBox Text="0,00" MinWidth="50" Name="R3TextB"/>
+                            <Label Content="c"/>
+                            <ComboBox MinWidth="50" SelectedIndex="0" Name="R3ComboC"/>
+                            <Label Content="d"/>
+                            <ComboBox MinWidth="70" SelectedIndex="0" Name="R3ComboD"/>
+
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </StackPanel>
+
+        </RadioButton>
+
+        <RadioButton GroupName="Formulas" Margin="5" Name="Radio4">
+            <StackPanel>
+                <Image Source="Images/p4.png" Height="50"/>
+                <GroupBox  Header="Parametrs4"
+                    IsEnabled="{Binding IsChecked,RelativeSource={RelativeSource AncestorType=RadioButton} }">
+                    <WrapPanel>
+                        <Label Content="c" VerticalAlignment="Center"/>
+                        <ComboBox MinWidth="70" SelectedIndex="0" Name="R4ComboC"/>
+                        <Label Content="d" VerticalAlignment="Center"/>
+                        <TextBox Text="3" Width="50" Name="R4TextD"/>
+                        <Label Content="a" VerticalAlignment="Center"/>
+                        <TextBox Text="2,00" Width="70" Name="R4TextA"/>
+                    </WrapPanel>
+                </GroupBox>
+            </StackPanel>
+        </RadioButton>
+
+        <RadioButton GroupName="Formulas" Margin="5" x:Name="Radio5">
+            <StackPanel>
+                <Image Source="Images/p5.png" Height="60"/>
+                <GroupBox  Header="Parametrs5"
+                    IsEnabled="{Binding IsChecked,RelativeSource={RelativeSource AncestorType=RadioButton} }">
+
+                    <WrapPanel>
+                        <Label Content="N =" VerticalAlignment="Center"/>
+                        <TextBox MinWidth="50" Name="R5TextN"/>
+
+                        <Label Content="K" VerticalAlignment="Center"/>
+                        <TextBox MinWidth="50" Name="R5TextK"/>
+
+                        <Label Content="a" VerticalAlignment="Center"/>
+                        <TextBox MinWidth="50" Name="R5TextA"/>
+
+                        <Label Content="x" VerticalAlignment="Center"/>
+                        <TextBox  MinWidth="50" Name="R5TextX"/>
+
+                        <Label Content="f" VerticalAlignment="Center"/>
+                        <TextBox  MinWidth="50" Name="R5TextF"/>
+
+                        <Label Content="y" VerticalAlignment="Center"/>
+                        <TextBox  MinWidth="50" Name="R5TextY"/>
+                    </WrapPanel>
+                </GroupBox>
+            </StackPanel>
+        </RadioButton>
+
+        <Button Content="Считать" Width="100" Click="Calc_Click" Margin="0,10,0,10"/>
+    </StackPanel>
+
+
+
+</Window>
