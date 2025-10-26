@@ -22,6 +22,8 @@ namespace L_R_3_KhasanovaNG_BPI_23_01
         public MainWindow()
         {
             InitializeComponent();
+            LoadTheme("Light");
+
 
             calculator = new FunctionCalculator();
 
@@ -49,14 +51,22 @@ namespace L_R_3_KhasanovaNG_BPI_23_01
             R4ComboC.Items.Add(2);
         }
 
+        private void LoadTheme(string themeName)
+        {
+            var uri = new Uri($"Themes/{themeName}.xaml", UriKind.Relative);
+            var resourceDict = Application.LoadComponent(uri) as ResourceDictionary;
+
+            Application.Current.Resources.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(resourceDict);
+        }
         private void ToggleTheme_Click(object sender, RoutedEventArgs e)
         {
             isDarkTheme = !isDarkTheme;
-            Resources.MergedDictionaries.Clear();
-            var themeUri = isDarkTheme
-                ? new Uri("Themes/Dark.xaml", UriKind.Relative)
-                : new Uri("Themes/Light.xaml", UriKind.Relative);
-            Resources.MergedDictionaries.Add(new ResourceDictionary { Source = themeUri });
+            string theme = isDarkTheme ? "Themes/Dark.xaml" : "Themes/Light.xaml";
+
+            var dict = new ResourceDictionary { Source = new Uri(theme, UriKind.Relative) };
+            Application.Current.Resources.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(dict);
         }
 
         private void Calc_Click(object sender, RoutedEventArgs e)

@@ -8,16 +8,13 @@
         Title="Maтематическое выражение" 
         Height="700" Width="500"
         WindowStartupLocation="CenterScreen"
-        SizeToContent="Height">
-    
-    <Window.Resources>
-        <ResourceDictionary Source="Themes/Light.xaml"/> 
-    </Window.Resources>
+        SizeToContent="Height"
+        Style="{DynamicResource WindowStyle}">
+
+   
 
     <StackPanel>
-        <StackPanel.Background>
-            <StaticResource ResourceKey="WindowBackground" />
-        </StackPanel.Background>
+        
         
         
 
@@ -28,7 +25,7 @@
                     <GroupBox Header="Parametrs1"
                               IsEnabled="{Binding IsChecked,RelativeSource={RelativeSource AncestorType=RadioButton} }">
                         <GroupBox.Background>
-                             <StaticResource ResourceKey="GroupBoxBackground"/>
+                            <DynamicResource ResourceKey="GroupBoxBackground" />
                         </GroupBox.Background>
                         <Grid>
                             <Grid.RowDefinitions>
@@ -66,7 +63,7 @@
                     <GroupBox  Header="Parametrs2"
                         IsEnabled="{Binding IsChecked,RelativeSource={RelativeSource AncestorType=RadioButton} }">
                         <GroupBox.Background>
-                            <SolidColorBrush Color="#FAFAFA" />
+                            <DynamicResource ResourceKey="GroupBoxBackground" />
                         </GroupBox.Background>
                         <Grid>
                             <Grid.RowDefinitions>
@@ -99,7 +96,7 @@
                     <GroupBox  Header="Parametrs3"
                         IsEnabled="{Binding IsChecked,RelativeSource={RelativeSource AncestorType=RadioButton} }">
                         <GroupBox.Background>
-                            <SolidColorBrush Color="#FAFAFA" />
+                            <DynamicResource ResourceKey="GroupBoxBackground" />
                         </GroupBox.Background>
                         <StackPanel Orientation="Horizontal">
                             <Label Content="a"/>
@@ -124,7 +121,7 @@
                 <GroupBox  Header="Parametrs4"
                     IsEnabled="{Binding IsChecked,RelativeSource={RelativeSource AncestorType=RadioButton} }">
                     <GroupBox.Background>
-                        <SolidColorBrush Color="#FAFAFA" />
+                        <DynamicResource ResourceKey="GroupBoxBackground" />
                     </GroupBox.Background>
                     <WrapPanel>
                         <Label Content="c" VerticalAlignment="Center"/>
@@ -144,7 +141,7 @@
                 <GroupBox  Header="Parametrs5"
                     IsEnabled="{Binding IsChecked,RelativeSource={RelativeSource AncestorType=RadioButton} }">
                     <GroupBox.Background>
-                        <SolidColorBrush Color="#FAFAFA" />
+                        <DynamicResource ResourceKey="GroupBoxBackground" />
                     </GroupBox.Background>
                     <WrapPanel>
                         <Label Content="N =" VerticalAlignment="Center"/>
@@ -170,7 +167,7 @@
         </RadioButton>
 
         <Button Content="Считать" Width="100" Click="Calc_Click" Margin="0,10,0,10"
-                Style="{StaticResource CalcButtonStyle}"/>
+                Style="{DynamicResource CalcButtonStyle}"/>
 
         <Button Content="Переключить тему" Click="ToggleTheme_Click" 
          Margin="0,10,10,10" Width="150"/>

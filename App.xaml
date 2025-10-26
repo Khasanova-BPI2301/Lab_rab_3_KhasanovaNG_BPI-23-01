@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:L_R_3_KhasanovaNG_BPI_23_01"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <ResourceDictionary Source="Themes/Light.xaml" />
          
     </Application.Resources>
 </Application>
