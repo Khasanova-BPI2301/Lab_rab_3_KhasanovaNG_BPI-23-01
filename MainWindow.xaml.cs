@@ -18,6 +18,7 @@ namespace L_R_3_KhasanovaNG_BPI_23_01
     public partial class MainWindow : Window
     {
         private FunctionCalculator calculator;
+        private bool isDarkTheme = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -46,6 +47,16 @@ namespace L_R_3_KhasanovaNG_BPI_23_01
             R4ComboC.Items.Add(0);
             R4ComboC.Items.Add(1);
             R4ComboC.Items.Add(2);
+        }
+
+        private void ToggleTheme_Click(object sender, RoutedEventArgs e)
+        {
+            isDarkTheme = !isDarkTheme;
+            Resources.MergedDictionaries.Clear();
+            var themeUri = isDarkTheme
+                ? new Uri("Themes/Dark.xaml", UriKind.Relative)
+                : new Uri("Themes/Light.xaml", UriKind.Relative);
+            Resources.MergedDictionaries.Add(new ResourceDictionary { Source = themeUri });
         }
 
         private void Calc_Click(object sender, RoutedEventArgs e)

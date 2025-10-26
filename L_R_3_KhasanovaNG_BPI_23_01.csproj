@@ -24,4 +24,10 @@
     <Resource Include="Images\p5.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Page Update="Themes\Light.xaml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Page>
+  </ItemGroup>
+
 </Project>
