@@ -2,24 +2,30 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style x:Key="WindowStyle" TargetType="Window">
-        <Setter Property="Background" Value="WhiteSmoke"/>
+        <Setter Property="Background" >
+            <Setter.Value>
+                <SolidColorBrush Color="#FFFFBECE" Opacity="0.98" />
+            </Setter.Value>
+        </Setter>
+                
     </Style>
 
     <Style x:Key="CalcButtonStyle" TargetType="Button">
         <Setter Property="Background">
             <Setter.Value>
                 <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
-                    <GradientStop Color="DarkBlue" Offset="0"/>
-                    <GradientStop Color="LightBlue" Offset="1"/>
+                    <GradientStop Color="#850e35" Offset="0"/>
+                    <GradientStop Color="#fff5e4" Offset="1"/>
                 </LinearGradientBrush>
             </Setter.Value>
         </Setter>
         <Setter Property="Foreground" Value="White"/>
-        <Setter Property="FontFamily" Value="Verdana"/>
+        <Setter Property="FontFamily" Value="Bodoni Bk BT"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Margin" Value="0,10,0,10"/>
+        
     </Style>
 
-    <SolidColorBrush x:Key="GroupBoxBackground" Color="#FAFAFA" />
+    <SolidColorBrush x:Key="GroupBoxBackground" Color="#C75C71" />
 
 </ResourceDictionary>

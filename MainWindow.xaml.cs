@@ -51,6 +51,7 @@ namespace L_R_3_KhasanovaNG_BPI_23_01
             R4ComboC.Items.Add(2);
         }
 
+
         private void LoadTheme(string themeName)
         {
             var uri = new Uri($"Themes/{themeName}.xaml", UriKind.Relative);
@@ -59,14 +60,12 @@ namespace L_R_3_KhasanovaNG_BPI_23_01
             Application.Current.Resources.Clear();
             Application.Current.Resources.MergedDictionaries.Add(resourceDict);
         }
+
         private void ToggleTheme_Click(object sender, RoutedEventArgs e)
         {
             isDarkTheme = !isDarkTheme;
-            string theme = isDarkTheme ? "Themes/Dark.xaml" : "Themes/Light.xaml";
-
-            var dict = new ResourceDictionary { Source = new Uri(theme, UriKind.Relative) };
-            Application.Current.Resources.Clear();
-            Application.Current.Resources.MergedDictionaries.Add(dict);
+            string theme = isDarkTheme ? "Dark" : "Light";
+            LoadTheme(theme);
         }
 
         private void Calc_Click(object sender, RoutedEventArgs e)
